@@ -1,0 +1,170 @@
+﻿@{
+	ViewBag.Title = "Form";
+	Layout = "~/Views/Shared/_Form.cshtml";
+}
+<script>
+    layui.use(['jquery', 'form', 'laydate', 'common','optimizeSelectOption'], function () {
+        var form = layui.form,
+            $ = layui.$,
+            common = layui.common,
+            laydate = layui.laydate;
+        var keyValue = $.request("keyValue");
+        //权限字段
+        common.authorizeFields('adminform');
+        //此处需修改
+        //类型为时间时
+        //laydate.render({
+            //elem: '#F_Birthday'
+            //, btns: ['clear', 'now']
+            //, trigger: 'click',
+            //format: 'yyyy-MM-dd',
+        //});
+
+        $(function () {
+            initControl();
+            if (!!keyValue) {
+                 common.ajax({
+                   url: '@(YMWeb.Code.GlobalContext.SystemConfig.VirtualDirectory)/InfoManage/Linkinfo/GetFormJson',
+                   dataType: 'json',
+                   data: { keyValue: keyValue },
+                   async: false,
+                   success: function (data) {
+                       common.val('adminform', data);
+                    }
+               });
+			}
+		
+			if ($("#ewmImg").val() != "" && $("#ewmImg").val().indexOf("https://") < 0) {
+
+				$("#ewmImg").val('@(YMWeb.Code.GlobalContext.SystemConfig.url)' + '@(YMWeb.Code.GlobalContext.SystemConfig.VirtualDirectory)' + $("#ewmImg").val());
+
+			}
+
+			if ($("#F_LinkUrl").val() != "") {
+				var l = $("#stLink").find("option");
+				
+				for (var i = 0; i < l.length; i++) {
+					
+					if ($("#F_LinkUrl").val().indexOf($(l[i]).attr("value")) >= 0) {
+						$("#stLink").val($(l[i]).attr("value"));
+					}
+				}
+				
+			}
+           form.render();
+       });
+       wcLoading.close();
+
+       function initControl() {
+           //此处需修改
+           //绑定数据源
+           //类型为下拉框时
+       }
+
+       //监听提交
+       form.on('submit(saveBtn)', function (data) {
+           // 单击之后提交按钮不可选,防止重复提交
+           $('.site-demo-active').addClass('layui-btn-disabled');
+           $('.site-demo-active').attr('disabled', 'disabled');
+           var postData = data.field;
+           common.submitForm({
+               url: '@(YMWeb.Code.GlobalContext.SystemConfig.VirtualDirectory)/InfoManage/Linkinfo/SubmitForm?keyValue=' + keyValue,
+               param: postData,
+               success: function () {
+                   common.parentreload('data-search-btn');
+               }
+           })
+           return false;
+       });
+   });
+</script>
+
+<body>
+	<div class="layuimini-container">
+		<div class="layuimini-main" style="margin-bottom: 80px;">
+			<div class="layui-form layuimini-form" lay-filter="adminform">
+				<div class="layui-form-item layui-hide">
+					<label class="layui-form-label required">名称</label>
+					<div class="layui-input-block">
+						<input type="text" id="F_title" name="F_title" autocomplete="off" lay-verify="required" placeholder="请输入" class="layui-input">
+					</div>
+				</div>
+				<div class="layui-form-item layui-hide">
+					<label class="layui-form-label required">链接</label>
+					<div class="layui-input-block">
+                        <select id="stLink">
+                            <option value="/pages/index">首页</option>
+                            @*<option value="/pages/brand">品牌动态</option>*@
+                            <option value="/pages/history">品牌故事</option>
+                            <option value="/pages/main">hpv科普</option>
+                            <option value="/pages/main?id=0&tab2=1">HPV 9-15岁</option>
+                            <option value="/pages/main?id=0&tab2=2">HPV 16-18岁</option>
+                            <option value="/pages/main?id=0&tab2=3">HPV 19-26岁</option>
+                            <option value="/pages/main?id=0&tab2=4">HPV 27-45岁</option>
+                            <option value="/pages/main?id=1">轮状科普</option>
+                            <option value="/pages/main?id=2">肺炎科普</option>
+                            <option value="/pages/main?id=3">甲肝科普</option>
+                            <option value="/pages/brand">品牌动态</option>
+                            <option value="/pages/video">视频干货</option>
+                            <option value="/pages/details?id=">内容详情</option>
+                            <option value="/pages/VaccineTools">疫苗工具</option>
+                            <option value="/pages/Strategy">约苗攻略</option>
+                            <option value="/pages/QA">十问十答</option>
+                        </select>
+					</div>
+				</div>
+				<div class="layui-form-item layui-hide">
+					<label class="layui-form-label required">渠道名称</label>
+                    <div class="layui-input-block">
+                        <input type="text" id="moreCol1" name="moreCol1" autocomplete="off" lay-verify="required" placeholder="请输入" class="layui-input">(规则：如需加入内容标签,请用下划线分隔。如：渠道名_内容标签)
+                    </div>
+				</div>
+				<div class="layui-form-item layui-hide">
+					<label class="layui-form-label">内容ID</label>
+					<div class="layui-input-block">
+						<input type="text" autocomplete="off" id="txtID" placeholder="请输入" class="layui-input">(此项只在选择内容详情时需填写)
+					</div>
+				</div>
+				<div class="layui-form-item layui-hide">
+					<label class="layui-form-label required">生成链接</label>
+					<div class="layui-input-block">
+						<input type="text" id="F_LinkUrl" name="F_LinkUrl" autocomplete="off" lay-verify="required" placeholder="请输入" class="layui-input">(点击生成按钮后自动生成)
+					</div>
+				</div>
+				<div class="layui-form-item layui-hide">
+					<label class="layui-form-label">二维码地址</label>
+					<div class="layui-input-block">
+						<input type="text" id="ewmImg" name="ewmImg" autocomplete="off" placeholder="请输入" class="layui-input">(确认保存后自动生成)
+					</div>
+				</div>
+
+				<div class="form-group-bottom text-right">
+					<div class="layui-input-block">
+
+						<button class="layui-btn site-demo-active" lay-submit id="btn" onclick="createLink()">点击生成</button> <button class="layui-btn site-demo-active" lay-submit id="submit" lay-filter="saveBtn">确认保存</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+
+<script type="text/javascript">
+	function createLink() {
+		$("#F_LinkUrl").val("");
+		var link = $("#stLink").val();
+		if (link == "/pages/details?id=") {
+			link = link + $("#txtID").val();
+		}
+
+		if (link.indexOf('?') >= 0) {
+			link = link + "&channel=" + $("#moreCol1").val();
+		}
+		else
+			link = link + "?channel=" + $("#moreCol1").val();
+
+		$("#F_LinkUrl").val(link);
+
+	}
+</script>

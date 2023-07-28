@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Quartz" Version="3.4.0" />
+    <PackageReference Include="System.Threading.Tasks" Version="4.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\VTemplate.Engine\VTemplate.Engine.csproj" />
+    <ProjectReference Include="..\YMWeb.Code\YMWeb.Code.csproj" />
+    <ProjectReference Include="..\YMWeb.Data\YMWeb.DataBase.csproj" />
+    <ProjectReference Include="..\YMWeb.Domain\YMWeb.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

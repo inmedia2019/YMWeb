@@ -1,0 +1,13 @@
+E:\work\y疫苗小程序\发送源码\YMWEB.Data\bin\Debug\netcoreapp3.1\YMWEB.DataBase.deps.json
+E:\work\y疫苗小程序\发送源码\YMWEB.Data\bin\Debug\netcoreapp3.1\YMWEB.DataBase.dll
+E:\work\y疫苗小程序\发送源码\YMWEB.Data\bin\Debug\netcoreapp3.1\YMWEB.DataBase.pdb
+E:\work\y疫苗小程序\发送源码\YMWEB.Data\bin\Debug\netcoreapp3.1\YMWEB.Code.dll
+E:\work\y疫苗小程序\发送源码\YMWEB.Data\bin\Debug\netcoreapp3.1\YMWEB.Code.pdb
+E:\work\y疫苗小程序\发送源码\YMWEB.Data\obj\Debug\netcoreapp3.1\YMWEB.DataBase.csproj.AssemblyReference.cache
+E:\work\y疫苗小程序\发送源码\YMWEB.Data\obj\Debug\netcoreapp3.1\YMWEB.DataBase.GeneratedMSBuildEditorConfig.editorconfig
+E:\work\y疫苗小程序\发送源码\YMWEB.Data\obj\Debug\netcoreapp3.1\YMWEB.DataBase.AssemblyInfoInputs.cache
+E:\work\y疫苗小程序\发送源码\YMWEB.Data\obj\Debug\netcoreapp3.1\YMWEB.DataBase.AssemblyInfo.cs
+E:\work\y疫苗小程序\发送源码\YMWEB.Data\obj\Debug\netcoreapp3.1\YMWEB.DataBase.csproj.CoreCompileInputs.cache
+E:\work\y疫苗小程序\发送源码\YMWEB.Data\obj\Debug\netcoreapp3.1\YMWEB.DataBase.csproj.CopyComplete
+E:\work\y疫苗小程序\发送源码\YMWEB.Data\obj\Debug\netcoreapp3.1\YMWEB.DataBase.dll
+E:\work\y疫苗小程序\发送源码\YMWEB.Data\obj\Debug\netcoreapp3.1\YMWEB.DataBase.pdb
