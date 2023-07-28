@@ -1,0 +1,669 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>YMWEB.WebApi</name>
+    </assembly>
+    <members>
+        <member name="M:YMWeb.WebApi.Controllers.BlockController.GetBannerByChannelId(System.String)">
+            <summary>
+            根据栏目ID获取banner列表
+            </summary>
+            <param name="channelId">父级ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:YMWeb.WebApi.Controllers.CityInfoController.GetCityInfo(System.String)">
+            <summary>
+            获取城市信息列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YMWeb.WebApi.Controllers.CityInfoController.GetCityIdByName(System.String)">
+            <summary>
+            根据城市名称获取城市ID
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YMWeb.WebApi.Controllers.CityInfoController.GetCityIdByChannelId(System.String,System.String)">
+            <summary>
+            根据栏目ID获取用户当前位置城市和最新发布城市位置
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:YMWeb.WebApi.Controllers.CmsManageController">
+            <summary>
+            cms管理
+            </summary>
+        </member>
+        <member name="M:YMWeb.WebApi.Controllers.CmsManageController.GetChannelInfoByParentId(System.String,System.String)">
+            <summary>
+            根据父级栏目ID获取下级栏目信息
+            </summary>
+            <param name="parentId">父级ID</param>
+            <param name="keyWord">搜索关键字</param>
+            <returns></returns>
+        </member>
+        <member name="M:YMWeb.WebApi.Controllers.CmsManageController.GetChannelInfoById(System.String)">
+            <summary>
+            根据栏目ID获取栏目信息
+            </summary>
+            <param name="Id">父级ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:YMWeb.WebApi.Controllers.CommentdzinfoController.AddCommentDZ(System.String,System.String,System.String)">
+            <summary>
+            新增用户评论点赞
+            </summary>
+            <param name="mid">当前用户ID</param>
+            <param name="infoId">信息ID</param>
+            <param name="commentId">评论ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:YMWeb.WebApi.Controllers.CommentInfoController.GetCommentByInfoId(System.String,System.String)">
+            <summary>
+            根据信息ID获取评论信息
+            </summary>
+            <param name="infoId">信息ID</param>
+            <param name="mid">用户ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:YMWeb.WebApi.Controllers.CommentInfoController.SetCommentInfo(YMWeb.WebApi.Controllers.CommentRequestEntity)">
+            <summary>
+            用户评论
+            </summary>
+        </member>
+        <member name="P:YMWeb.WebApi.Controllers.CommentRequestEntity.mid">
+            <summary>
+            用户ID
+            </summary>
+        </member>
+        <member name="P:YMWeb.WebApi.Controllers.CommentRequestEntity.content">
+            <summary>
+            评论内容
+            </summary>
+        </member>
+        <member name="P:YMWeb.WebApi.Controllers.CommentRequestEntity.infoId">
+            <summary>
+            信息ID
+            </summary>
+        </member>
+        <member name="P:YMWeb.WebApi.Controllers.CommentRequestEntity.infoTitle">
+            <summary>
+            信息标题
+            </summary>
+        </member>
+        <member name="P:YMWeb.WebApi.Controllers.CommentRequestEntity.pid">
+            <summary>
+            父级评论ID
+            </summary>
+        </member>
+        <member name="P:YMWeb.WebApi.Controllers.CommentRequestEntity.trueName">
+            <summary>
+            姓名
+            </summary>
+        </member>
+        <member name="P:YMWeb.WebApi.Controllers.CommentRequestEntity.headPic">
+            <summary>
+            图片
+            </summary>
+        </member>
+        <member name="P:YMWeb.WebApi.Controllers.CommentRequestEntity.url">
+            <summary>
+            页面url
+            </summary>
+        </member>
+        <member name="M:YMWeb.WebApi.Controllers.ContentController.GetInfoByChannelId(System.String,System.String,System.String,System.String,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            根据栏目ID获取信息列表
+            </summary>
+            <param name="channelId">频道ID</param>
+            <param name="cityId">城市ID</param>
+            <param name="subChannelId">副频道ID</param>
+            <param name="orderInfo">排序:0:最新 1：最热</param>
+            <param name="isRecommand">是否推荐:-1：全部 1：推荐 0：不推荐</param>
+            <param name="keyWord">关键词</param>
+            <param name="page">页码</param>
+            <param name="psize">每页显示条数</param>
+            <returns></returns>
+        </member>
+        <member name="M:YMWeb.WebApi.Controllers.ContentController.GetHomeInfoByChannelId(System.String,System.String,System.String,System.String,System.String,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            首页推荐阅读获取信息列表
+            </summary>
+            <param name="currentCityName">当前城市名称</param>
+            <param name="channelId">频道ID</param>
+            <param name="cityId">城市ID</param>
+            <param name="subChannelId">副频道ID</param>
+            <param name="orderInfo">排序:0:最新 1：最热</param>
+            <param name="isRecommand">是否推荐:-1：全部 1：推荐 0：不推荐</param>
+            <param name="keyWord">关键词</param>
+            <param name="page">页码</param>
+            <param name="psize">每页显示条数</param>
+            <returns></returns>
+        </member>
+        <member name="M:YMWeb.WebApi.Controllers.ContentController.GetLiveInfoByChannelId(System.String,System.String,System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            根据栏目ID获取直播列表
+            </summary>
+            <param name="tid">直播状态:0:预告 1：直播中 2:回看</param>
+            <param name="channelId">频道ID</param>
+            <param name="subChannelId">副频道ID</param>
+            <param name="keyWord">关键词</param>
+            <param name="page">页码</param>
+            <param name="psize">每页显示条数</param>
+            <returns></returns>
+        </member>
+        <member name="M:YMWeb.WebApi.Controllers.ContentController.GetNewsInfoById(System.String,System.String)">
+            <summary>
+            根据信息ID获取详细信息
+            </summary>
+            <param name="Id">Id</param>
+            <param name="mid">用户ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:YMWeb.WebApi.Controllers.ContentController.GetHistoryInfoTypeByMid(System.String,System.Int32,System.String)">
+            <summary>
+            获取用户浏览记录和点赞类型
+            </summary>
+            <param name="mid">mid</param>
+            <param name="channelId">mid</param>
+            <param name="tid">tid</param>
+            <returns></returns>
+        </member>
+        <member name="M:YMWeb.WebApi.Controllers.ContentController.GetHistoryByMid(System.String,System.Int32,System.String,System.Int32,System.String)">
+            <summary>
+            根据获取用户Id获取浏览历史记录信息和点赞
+            </summary>
+            <param name="mid">当前用户ID</param>
+            <param name="page">当前页</param>
+            <param name="ChannelId">栏目ID</param>
+            <param name="fmenuId">副栏目ID</param>
+            <param name="tid">0:浏览 2:点赞</param>
+            <returns></returns>
+        </member>
+        <member name="M:YMWeb.WebApi.Controllers.ContentLableController.GetContentLableInfo(System.String)">
+            <summary>
+            根据标签ID获取标签内容
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:YMWeb.WebApi.Controllers.DictionaryController">
+            <summary>
+            基础数据管理
+            </summary>
+        </member>
+        <member name="M:YMWeb.WebApi.Controllers.DictionaryController.GetDepartMentList">
+            <summary>
+            获取所有科室信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YMWeb.WebApi.Controllers.DictionaryController.GetJobTitleList">
+            <summary>
+            获取所有职称信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:YMWeb.WebApi.Controllers.FavitorActionInfo.tid">
+            <summary>
+            0:新增收藏 1:取消收藏
+            </summary>
+        </member>
+        <member name="P:YMWeb.WebApi.Controllers.FavitorActionInfo.url">
+            <summary>
+            页面URL
+            </summary>
+        </member>
+        <member name="M:YMWeb.WebApi.Controllers.FavitorinfoController.SetUserFavitorInfo(YMWeb.WebApi.Controllers.FavitorActionInfo)">
+            <summary>
+            新增收藏信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YMWeb.WebApi.Controllers.FavitorinfoController.GetFavitorInfoByMid(System.String)">
+            <summary>
+            获取用户收藏类型
+            </summary>
+            <param name="mid">mid</param>
+            <returns></returns>
+        </member>
+        <member name="M:YMWeb.WebApi.Controllers.FavitorinfoController.GetFavitorInfoByMidAndParentId(System.String,System.String)">
+            <summary>
+            根据收藏类型ID获取用户收藏信息
+            </summary>
+            <param name="mid">用户ID</param>
+            <param name="ParentId">信息类型</param>
+            <returns></returns>
+        </member>
+        <member name="M:YMWeb.WebApi.Controllers.FavitorinfoController.GetUserIsFavitorInfo(System.String,System.String)">
+            <summary>
+            根据信息ID查询用户是否收藏
+            </summary>
+            <param name="mid">用户ID</param>
+            <param name="infoId">infoId</param>
+            <returns></returns>
+        </member>
+        <member name="M:YMWeb.WebApi.Controllers.HotKeyWordController.GetHotHeyWordInfo">
+            <summary>
+            获取热门关键词列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YMWeb.WebApi.Controllers.LiveMessageController.SetLeaveMessage(YMWeb.WebApi.Controllers.ActionMessage)">
+            <summary>
+            用户留言
+            </summary>
+            <param name="mid">用户ID</param>
+            <param name="content">留言内容</param>
+            <returns></returns>
+        </member>
+        <member name="M:YMWeb.WebApi.Controllers.MemberinfoController.AddMemberInfoInfo(YMWeb.Domain.DictionaryDataBase.MemberinfoEntity)">
+             <summary>
+            用户注册
+             </summary>
+             <returns></returns>
+        </member>
+        <member name="M:YMWeb.WebApi.Controllers.MemberinfoController.ModifyMemberInfoInfo(YMWeb.Domain.DictionaryDataBase.MemberinfoEntity)">
+             <summary>
+            用户信息更新
+             </summary>
+             <returns></returns>
+        </member>
+        <member name="M:YMWeb.WebApi.Controllers.MemberinfoController.GetUserInfoByOpenId(System.String)">
+            <summary>
+            根据openId获取用户信息
+            </summary>
+            <param name="openId">openId</param>
+            <returns></returns>
+        </member>
+        <member name="M:YMWeb.WebApi.Controllers.MemberinfoController.ModifyUserInfoByMid(System.String,System.Int32,System.Boolean)">
+            <summary>
+            更新用户协议书
+            </summary>
+            <param name="mid">用户Id</param>
+            <param name="tid">更新类型1:用户协议 2：行为收集</param>
+            <param name="tValue">更新值</param>
+            <returns></returns>
+        </member>
+        <member name="M:YMWeb.WebApi.Controllers.MemberinfoController.DelUserInfoByMid(System.String)">
+            <summary>
+            注销用户
+            </summary>
+            <param name="mid">用户Id</param>
+            <returns></returns>
+        </member>
+        <member name="M:YMWeb.WebApi.Controllers.MemberinfoController.GetUserInfoByPhone(System.String)">
+            <summary>
+            根据手机号获取用户信息
+            </summary>
+            <param name="phone">手机号</param>
+            <returns></returns>
+        </member>
+        <member name="M:YMWeb.WebApi.Controllers.MemberinfoController.SenUserPhoneCode(System.String)">
+            <summary>
+            验证码发送
+            </summary>
+            <param name="phone">手机号</param>
+            <returns></returns>
+        </member>
+        <member name="M:YMWeb.WebApi.Controllers.MemberinfoController.GenerateRandomCode(System.Int32)">
+            <summary>
+            用GUID作种子生成理论上不重复的随机数作为验证码
+            </summary>
+            <param name="length"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YMWeb.WebApi.Controllers.SubscriptionController.GetSubscriptionInfoByMid(System.String,System.String)">
+            <summary>
+            获取用户订阅类型
+            </summary>
+            <param name="mid">mid</param>
+            <param name="channelId">mid</param>
+            <returns></returns>
+        </member>
+        <member name="M:YMWeb.WebApi.Controllers.SubscriptionController.GetSubscriptionByMid(System.String,System.Int32,System.String,System.Int32)">
+            <summary>
+            根据获取用户Id和副频道ID获取订阅信息
+            </summary>
+            <param name="mid">当前用户ID</param>
+            <param name="page">当前页</param>
+            <param name="subChannelId">副频道ID</param>
+            <param name="tid">0:预告 1:直播中 2：回放 -1：全部</param>
+            <returns></returns>
+        </member>
+        <member name="M:YMWeb.WebApi.Controllers.SubscriptionController.SetSubscriptionInfo(YMWeb.WebApi.Controllers.SubscriptionRequestEntity)">
+            <summary>
+            用户预约
+            </summary>
+            <param name="infos">预约信息</param>
+            <returns></returns>
+        </member>
+        <member name="P:YMWeb.WebApi.Controllers.SubscriptionRequestEntity.mid">
+            <summary>
+            用户ID
+            </summary>
+        </member>
+        <member name="P:YMWeb.WebApi.Controllers.SubscriptionRequestEntity.openId">
+            <summary>
+            用户openId
+            </summary>
+        </member>
+        <member name="P:YMWeb.WebApi.Controllers.SubscriptionRequestEntity.infoId">
+            <summary>
+            信息ID
+            </summary>
+        </member>
+        <member name="P:YMWeb.WebApi.Controllers.SubscriptionRequestEntity.title">
+            <summary>
+            信息标题
+            </summary>
+        </member>
+        <member name="P:YMWeb.WebApi.Controllers.SubscriptionRequestEntity.time">
+            <summary>
+            时间
+            </summary>
+        </member>
+        <member name="P:YMWeb.WebApi.Controllers.SubscriptionRequestEntity.url">
+            <summary>
+            页面url
+            </summary>
+        </member>
+        <member name="P:YMWeb.WebApi.Controllers.SubscriptionRequestEntity.tid">
+            <summary>
+            操作类型：0：预约 1：取消预约
+            </summary>
+        </member>
+        <member name="M:YMWeb.WebApi.Controllers.UserActionInfoController.SetUserSignByMid(System.String)">
+            <summary>
+            用户签到
+            </summary>
+            <param name="mid">用户ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:YMWeb.WebApi.Controllers.UserActionInfoController.AddUserActionByMid(System.String,System.String,System.Int32,System.String,System.String,System.String)">
+            <summary>
+            新增用户行为
+            </summary>
+            <param name="mid">当前用户ID</param>
+            <param name="infoId">信息ID</param>
+            <param name="tid">0:浏览 1:搜索 2:点赞 3:评论 4:收藏 5:广告位点击 6:视频播放时间 7:取消收藏 8:取消点赞 9:更新用户信息 10:分享 11:首次显示banner 12:停留时长 13:阅读完成百分比 14:用户是否勾选同意按钮</param>
+            <param name="content">搜索内容/评论内容/视频播放时间</param>
+            <param name="pageUrl">页面地址</param>
+            <param name="options">来源场景</param>
+            <returns></returns>
+        </member>
+        <member name="M:YMWeb.WebApi.Controllers.UserActionInfoController.GetScoreRecdorByMid(System.String,System.Int32)">
+            <summary>
+            根据获取用户Id获取积分记录信息
+            </summary>
+            <param name="mid">当前用户ID</param>
+            <param name="page">当前页</param>
+            <returns></returns>
+        </member>
+        <member name="M:YMWeb.WebApi.Controllers.UserActionInfoController.GetFirstFavitorRecordCount(System.String,System.String)">
+            <summary>
+            查询信息是否已经被当前用户收藏
+            </summary>
+            <param name="mid">当前用户ID</param>
+            <param name="infoId">当前信息ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:YMWeb.WebApi.Controllers.UserActionInfoController.GetFirstLookCount(System.String,System.String)">
+            <summary>
+            查询用户首次浏览Banner
+            </summary>
+            <param name="mid">当前用户ID</param>
+            <param name="vcontent">内容</param>
+            <returns></returns>
+        </member>
+        <member name="M:YMWeb.WebApi.Controllers.UserActionInfoController.GetWatchInfo">
+            <summary>
+            根据用户缓存观看视频信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:YMWeb.WebApi.Controllers.UserController">
+            <summary>
+            用户接口
+            </summary>
+        </member>
+        <member name="M:YMWeb.WebApi.Controllers.WechatController.Authorize(System.String)">
+            <summary>
+            授权
+            </summary>
+            <param name="js_code">jsCode</param>
+            <returns></returns>
+        </member>
+        <member name="M:YMWeb.WebApi.Controllers.WeixinInfo.GenerateRandomCode(System.Int32)">
+            <summary>
+            用GUID作种子生成理论上不重复的随机数作为验证码
+            </summary>
+            <param name="length"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YMWeb.WebApi.Controllers.WeixinInfo.GetSignature(System.String,System.String,System.String,System.String,System.String@)">
+            <summary>
+            签名算法       
+            </summary>
+            <param name="jsapi_ticket">jsapi_ticket</param>
+            <param name="noncestr">随机字符串(必须与wx.config中的nonceStr相同)</param>
+            <param name="timestamp">时间戳(必须与wx.config中的timestamp相同)</param>
+            <param name="url">当前网页的URL，不包含#及其后面部分(必须是调用JS接口页面的完整URL)</param>
+            <returns></returns>
+        </member>
+        <member name="M:YMWeb.WebApi.Controllers.WeixinInfo.Sha1Signature(System.String,System.Text.Encoding)">
+            <summary>
+            Sha1签名
+            </summary>
+            <param name="str">内容</param>
+            <param name="encoding">编码</param>
+            <returns></returns>
+        </member>
+        <member name="T:YMWeb.WebApi.AuthorizeFilterAttribute">
+            <summary>
+            验证token
+            </summary>
+        </member>
+        <member name="F:YMWeb.WebApi.AuthorizeFilterAttribute.IgnoreToken">
+            <summary>
+            忽略token的方法
+            </summary>
+        </member>
+        <member name="M:YMWeb.WebApi.AuthorizeFilterAttribute.OnActionExecutionAsync(Microsoft.AspNetCore.Mvc.Filters.ActionExecutingContext,Microsoft.AspNetCore.Mvc.Filters.ActionExecutionDelegate)">
+            <summary>
+            异步接口日志
+            </summary>
+            <param name="context"></param>
+            <param name="next"></param>
+            <returns></returns>
+        </member>
+        <member name="P:YMWeb.WebApi.Models.HospitalInfoEntity.F_HospitalName">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:YMWeb.WebApi.Models.HospitalInfoEntity.F_Address">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:YMWeb.WebApi.Models.HospitalInfoEntity.F_Country">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:YMWeb.WebApi.Models.HospitalInfoEntity.F_Province">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:YMWeb.WebApi.Models.HospitalInfoEntity.F_City">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:YMWeb.WebApi.Models.HospitalInfoEntity.F_Area">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:YMWeb.WebApi.Models.HospitalInfoEntity.F_District">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:YMWeb.WebApi.Models.HospitalInfoEntity.F_Number">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:YMWeb.WebApi.Models.HospitalInfoEntity.F_Introduction">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:YMWeb.WebApi.Models.HospitalInfoEntity.F_Order">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:YMWeb.WebApi.Models.HospitalInfoEntity.F_EnabledMark">
+            <summary>
+            是否启用
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:YMWeb.WebApi.Models.HospitalInfoEntity.F_DeleteMark">
+            <summary>
+            逻辑删除标志
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:YMWeb.WebApi.Models.HospitalInfoEntity.F_CreatorTime">
+            <summary>
+            创建时间
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:YMWeb.WebApi.Models.HospitalInfoEntity.F_CreatorUserId">
+            <summary>
+            创建人
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:YMWeb.WebApi.Models.HospitalInfoEntity.F_LastModifyTime">
+            <summary>
+            最后修改时间
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:YMWeb.WebApi.Models.HospitalInfoEntity.F_LastModifyUserId">
+            <summary>
+            最后修改人
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:YMWeb.WebApi.Models.HospitalInfoEntity.F_DeleteTime">
+            <summary>
+            删除时间
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:YMWeb.WebApi.Models.HospitalInfoEntity.F_DeleteUserId">
+            <summary>
+            删除人
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:YMWeb.WebApi.Models.ReturnType`1">
+            <summary>
+            统一的返回类型
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="P:YMWeb.WebApi.Models.ReturnType`1.Result">
+            <summary>
+            是否成功
+            </summary>
+        </member>
+        <member name="P:YMWeb.WebApi.Models.ReturnType`1.Msg">
+            <summary>
+            详细信息
+            </summary>
+        </member>
+        <member name="P:YMWeb.WebApi.Models.ReturnType`1.Data">
+            <summary>
+            数据内容
+            </summary>
+        </member>
+        <member name="T:YMWeb.WebApi.Models.ReturnTypeList`1">
+            <summary>
+            统一的数组返回类型
+            </summary>
+        </member>
+        <member name="P:YMWeb.WebApi.Models.ReturnTypeList`1.Result">
+            <summary>
+            是否成功
+            </summary>
+        </member>
+        <member name="P:YMWeb.WebApi.Models.ReturnTypeList`1.Msg">
+            <summary>
+            详细信息
+            </summary>
+        </member>
+        <member name="P:YMWeb.WebApi.Models.ReturnTypeList`1.Data">
+            <summary>
+            数据内容
+            </summary>
+        </member>
+        <member name="T:YMWeb.WebApi.Tools.Util">
+            <summary>
+            工具类
+            </summary>
+        </member>
+        <member name="M:YMWeb.WebApi.Tools.Util.getReturnObjectByList``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            获取返回类型
+            </summary>
+            <typeparam name="T">泛型</typeparam>
+            <param name="data">数据</param>
+            <returns></returns>
+        </member>
+        <member name="M:YMWeb.WebApi.Tools.Util.getReturnObject``1(``0,System.String)">
+            <summary>
+            获取返回类型
+            </summary>
+            <typeparam name="T">泛型</typeparam>
+            <param name="data">数据</param>
+            <param name="msg">信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:YMWeb.WebApi.Tools.Util.getReturnObjects``1(``0,System.String)">
+            <summary>
+            获取返回类型
+            </summary>
+            <typeparam name="T">泛型</typeparam>
+            <param name="data">数据</param>
+            <param name="msg">信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:YMWeb.WebApi.Tools.Util.getReturnObjectInfo``1(``0,System.String,System.Boolean)">
+            <summary>
+            获取返回类型
+            </summary>
+            <typeparam name="T">泛型</typeparam>
+            <param name="data">数据</param>
+            <param name="msg">信息</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

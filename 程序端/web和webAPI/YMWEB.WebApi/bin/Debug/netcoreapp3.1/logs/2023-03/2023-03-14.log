@@ -1,0 +1,14 @@
+2023-03-14 14:11:38
+程序启动
+ContentRootPath:E:\work\y疫苗小程序\发送源码\YMWEB.WebApi
+WebRootPath:
+IsDevelopment:True
+
+
+2023-03-14 14:12:00
+Value cannot be null. (Parameter 'type')
+   at System.Activator.CreateInstance(Type type, BindingFlags bindingAttr, Binder binder, Object[] args, CultureInfo culture, Object[] activationAttributes)
+   at System.Activator.CreateInstance(Type type, Object[] args)
+   at YMWeb.Service.AutoJob.JobExecute.<>c__DisplayClass4_0.<<Execute>b__0>d.MoveNext() in E:\work\y疫苗小程序\发送源码\YMWEB.Service\AutoJob\JobExecute.cs:line 71
+
+

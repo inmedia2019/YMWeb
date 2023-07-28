@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "YMWeb.DataBase": {
+      "commandName": "Project",
+      "nativeDebugging": true
+    }
+  }
+}

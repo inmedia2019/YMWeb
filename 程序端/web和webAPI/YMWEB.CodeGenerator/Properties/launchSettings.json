@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "YMWeb.CodeGenerator": {
+      "commandName": "Project",
+      "nativeDebugging": true
+    }
+  }
+}

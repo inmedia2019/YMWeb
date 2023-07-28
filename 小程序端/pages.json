@@ -1,0 +1,116 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/index",
+			"style": {
+				
+			}
+		},
+		{
+			"path": "pages/main",
+			"style": {
+				"navigationBarTitleText": "疫苗科普"
+			}
+		},
+		{
+			"path": "pages/brand",
+			"style": {
+				"navigationBarTitleText": "品牌动态"
+			}
+		},
+		{
+			"path": "pages/Collection",
+			"style": {
+				"navigationBarTitleText": "我的"
+			}
+		},
+		{
+			"path": "pages/video",
+			"style": {
+				"navigationBarTitleText": "疫苗干货"
+			}
+		},
+		{
+			"path": "pages/details",
+			"style": {
+				
+			}
+		},
+		{
+			"path": "pages/search",
+			"style": {
+				
+			}
+		},
+		{
+			"path": "pages/history",
+			"style": {
+				"navigationBarTitleText": "品牌故事"
+			}
+		},
+		{
+			"path": "pages/VaccineTools",
+			"style": {
+				"navigationBarTitleText": "疫苗工具"
+			}
+		},
+		{
+			"path": "pages/Strategy",
+			"style": {
+				"navigationBarTitleText": "苗懂攻略"
+			}
+		},
+		{
+			"path": "pages/QA",
+			"style": {
+				"navigationBarTitleText": "十问十答"
+			}
+		},
+		
+		{
+			"path": "pages/webview",
+			"style": {
+				
+			}
+		},
+		{
+			"path": "pages/activity/1",
+			"style": {
+				
+			}
+		},
+		{
+			"path": "pages/activity/221215",
+			"style": {
+				
+			}
+		},
+		{
+			"path": "pages/activity/230215",
+			"style": {
+				
+			}
+		},
+		
+		{
+			"path": "pages/login",
+			"style": {
+				
+			}
+		},
+		{
+			"path": "pages/openid",
+			"style": {
+				
+			}
+		}
+		
+		
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "苗懂了",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
+	}
+}
