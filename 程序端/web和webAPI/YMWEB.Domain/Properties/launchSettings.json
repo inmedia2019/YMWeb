@@ -1,8 +1,0 @@
-{
-  "profiles": {
-    "YMWeb.Domain": {
-      "commandName": "Project",
-      "nativeDebugging": true
-    }
-  }
-}
